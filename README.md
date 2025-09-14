@@ -1,4 +1,4 @@
-# Alertmanager Email Demo (with MailHog)
+# Alertmanager Email Demo 
 
 This project shows how to use **Prometheus + Alertmanager** to send alert notifications as emails.  
 It uses [MailHog](https://github.com/mailhog/MailHog), a lightweight SMTP server with a web UI that captures all outgoing mail.  
@@ -37,3 +37,4 @@ Alerts will appear in MailHog as FIRING and later RESOLVED emails.
 
 
 <img width="1459" height="674" alt="image" src="https://github.com/user-attachments/assets/c6f19fb0-f1e8-4bfe-b8dc-b63cb82b513c" />
+
