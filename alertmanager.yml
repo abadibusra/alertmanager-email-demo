@@ -1,0 +1,12 @@
+global:
+  smtp_smarthost: 'mailhog:1025'
+  smtp_from: 'alertmanager@test.local'
+  smtp_require_tls: false
+route:
+  receiver: local-mailhog
+
+receivers:
+  - name: local-mailhog
+    email_configs:
+      - to: 'demo@local'
+        send_resolved: true

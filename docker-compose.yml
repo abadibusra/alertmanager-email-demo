@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./rules.yml:/etc/prometheus/rules.yml
+    ports:
+      - "9090:9090"
+
+  alertmanager:
+    container_name: alertmanager
+    image: prom/alertmanager
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - "9093:9093"
+  
+  node-exporter:
+    container_name: node_exporter
+    image: prom/node-exporter
+    ports:
+      - "9100:9100"
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"   # SMTP port (Alertmanager sends here)
+      - "8025:8025"   # Web UI
